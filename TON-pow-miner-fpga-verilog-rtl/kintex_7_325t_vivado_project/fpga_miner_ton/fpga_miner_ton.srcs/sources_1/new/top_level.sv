@@ -105,7 +105,7 @@ reg [7:0] r_task_rdata_2 [31:0];
 
 reg found;
 
-localparam [31:0] COREQ_QNT = 32'd1;
+localparam [31:0] COREQ_QNT = 32'd45;
 
 system_mcores #(.CORES_QNT(COREQ_QNT)) system_mcores_1 (
 
