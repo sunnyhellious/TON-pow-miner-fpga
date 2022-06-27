@@ -9,6 +9,7 @@ This repository contains:
 3. CLI tools for Windows OS. This tools receives from TON Coin GIVER tasks and sends via UART/COM-port interface this tasks to FPGA miner;
 4. Windows GUI for automatic mining process where you can create several mining processes for several FPGA's.
 
-![plot](./image/fpga-miner-arch.drawio.png)
+FPGA miner architecture: <br />
+![arch](./images/fpga-miner-arch.drawio.png)
 
 
