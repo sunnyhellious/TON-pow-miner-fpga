@@ -1,0 +1,549 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Mon Jun 27 15:07:42 2022
+# Process ID: 13632
+# Current directory: D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.runs/synth_1
+# Command line: vivado.exe -log top_level.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_level.tcl
+# Log file: D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.runs/synth_1/top_level.vds
+# Journal file: D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.runs/synth_1\vivado.jou
+# Running On: DESKTOP-MM296OU, OS: Windows, CPU Frequency: 3700 MHz, CPU Physical cores: 12, Host memory: 34282 MB
+#-----------------------------------------------------------
+source top_level.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/utils_1/imports/synth_1/top_level.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/utils_1/imports/synth_1/top_level.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top top_level -part xc7k325tffg676-2
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Device 21-403] Loading part xc7k325tffg676-2
+WARNING: [Designutils 20-4072] Reference run did not run incremental synthesis because the design is too small; reverting to default synthesis
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 17092
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1592.516 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top_level' [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [d:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/test_miner_ton.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.v:70]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0_clk_wiz' [d:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/test_miner_ton.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v:68]
+INFO: [Synth 8-6157] synthesizing module 'IBUF' [D:/Xilinx_IDE/Vivado/2021.2/scripts/rt/data/unisim_comp.v:55204]
+INFO: [Synth 8-6155] done synthesizing module 'IBUF' (1#1) [D:/Xilinx_IDE/Vivado/2021.2/scripts/rt/data/unisim_comp.v:55204]
+INFO: [Synth 8-6157] synthesizing module 'PLLE2_ADV' [D:/Xilinx_IDE/Vivado/2021.2/scripts/rt/data/unisim_comp.v:89397]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_MULT bound to: 18 - type: integer 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKIN1_PERIOD bound to: 20.000000 - type: double 
+	Parameter CLKOUT0_DIVIDE bound to: 10 - type: integer 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: double 
+	Parameter COMPENSATION bound to: ZHOLD - type: string 
+	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
+	Parameter STARTUP_WAIT bound to: FALSE - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'PLLE2_ADV' (2#1) [D:/Xilinx_IDE/Vivado/2021.2/scripts/rt/data/unisim_comp.v:89397]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [D:/Xilinx_IDE/Vivado/2021.2/scripts/rt/data/unisim_comp.v:1083]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (3#1) [D:/Xilinx_IDE/Vivado/2021.2/scripts/rt/data/unisim_comp.v:1083]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0_clk_wiz' (4#1) [d:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/test_miner_ton.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (5#1) [d:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/test_miner_ton.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.v:70]
+INFO: [Synth 8-6157] synthesizing module 'cmd_packets_ctrl' [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/cmd_packets_ctrl.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'uart_rx_m' [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/uart_ctrl.sv:26]
+	Parameter CLKS_PER_BIT bound to: 100 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'uart_rx_m' (6#1) [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/uart_ctrl.sv:26]
+INFO: [Synth 8-6157] synthesizing module 'crc32' [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/crc32.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'crc_func' [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/crc32.sv:87]
+INFO: [Synth 8-6155] done synthesizing module 'crc_func' (7#1) [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/crc32.sv:87]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/crc32.sv:56]
+INFO: [Synth 8-6155] done synthesizing module 'crc32' (8#1) [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/crc32.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'uart_tx_m' [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/uart_ctrl.sv:180]
+	Parameter CLKS_PER_BIT bound to: 100 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'uart_tx_m' (9#1) [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/uart_ctrl.sv:180]
+INFO: [Synth 8-6155] done synthesizing module 'cmd_packets_ctrl' (10#1) [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/cmd_packets_ctrl.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'system_mcores' [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/system_mcores.sv:2]
+	Parameter CORES_QNT bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001 
+INFO: [Synth 8-6157] synthesizing module 'mcore_2r' [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/mcore.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'data_constructor' [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/data_constructor.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'data_constructor' (11#1) [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/data_constructor.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'sha256_2r' [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/sha256_orig.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'sha256_2r' (12#1) [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/sha256_orig.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'comp_h' [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/mcore.sv:261]
+INFO: [Synth 8-6155] done synthesizing module 'comp_h' (13#1) [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/mcore.sv:261]
+INFO: [Synth 8-6155] done synthesizing module 'mcore_2r' (14#1) [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/mcore.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'tasks_generator' [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/tasks_generator.sv:2]
+	Parameter CORES_QNT bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001 
+INFO: [Synth 8-155] case statement is not full and has no default [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/tasks_generator.sv:146]
+INFO: [Synth 8-6157] synthesizing module 'mcore_1r' [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/mcore.sv:140]
+INFO: [Synth 8-6157] synthesizing module 'sha256_1r' [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/sha256_orig.sv:496]
+INFO: [Synth 8-6155] done synthesizing module 'sha256_1r' (15#1) [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/sha256_orig.sv:496]
+INFO: [Synth 8-6155] done synthesizing module 'mcore_1r' (16#1) [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/mcore.sv:140]
+INFO: [Synth 8-6155] done synthesizing module 'tasks_generator' (17#1) [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/tasks_generator.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'system_mcores' (18#1) [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/system_mcores.sv:2]
+WARNING: [Synth 8-7137] Register t_d1_reg in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:118]
+WARNING: [Synth 8-7137] Register t_d2_reg in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:119]
+WARNING: [Synth 8-7137] Register t_op_reg[3] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:120]
+WARNING: [Synth 8-7137] Register t_op_reg[2] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:120]
+WARNING: [Synth 8-7137] Register t_op_reg[1] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:120]
+WARNING: [Synth 8-7137] Register t_op_reg[0] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:120]
+WARNING: [Synth 8-7137] Register t_flags_reg in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:121]
+WARNING: [Synth 8-7137] Register t_expire_reg[3] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:122]
+WARNING: [Synth 8-7137] Register t_expire_reg[2] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:122]
+WARNING: [Synth 8-7137] Register t_expire_reg[1] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:122]
+WARNING: [Synth 8-7137] Register t_expire_reg[0] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:122]
+WARNING: [Synth 8-7137] Register t_myaddr_reg[31] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:123]
+WARNING: [Synth 8-7137] Register t_myaddr_reg[30] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:123]
+WARNING: [Synth 8-7137] Register t_myaddr_reg[29] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:123]
+WARNING: [Synth 8-7137] Register t_myaddr_reg[28] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:123]
+WARNING: [Synth 8-7137] Register t_myaddr_reg[27] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:123]
+WARNING: [Synth 8-7137] Register t_myaddr_reg[26] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:123]
+WARNING: [Synth 8-7137] Register t_myaddr_reg[25] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:123]
+WARNING: [Synth 8-7137] Register t_myaddr_reg[24] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:123]
+WARNING: [Synth 8-7137] Register t_myaddr_reg[23] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:123]
+WARNING: [Synth 8-7137] Register t_myaddr_reg[22] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:123]
+WARNING: [Synth 8-7137] Register t_myaddr_reg[21] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:123]
+WARNING: [Synth 8-7137] Register t_myaddr_reg[20] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:123]
+WARNING: [Synth 8-7137] Register t_myaddr_reg[19] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:123]
+WARNING: [Synth 8-7137] Register t_myaddr_reg[18] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:123]
+WARNING: [Synth 8-7137] Register t_myaddr_reg[17] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:123]
+WARNING: [Synth 8-7137] Register t_myaddr_reg[16] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:123]
+WARNING: [Synth 8-7137] Register t_myaddr_reg[15] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:123]
+WARNING: [Synth 8-7137] Register t_myaddr_reg[14] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:123]
+WARNING: [Synth 8-7137] Register t_myaddr_reg[13] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:123]
+WARNING: [Synth 8-7137] Register t_myaddr_reg[12] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:123]
+WARNING: [Synth 8-7137] Register t_myaddr_reg[11] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:123]
+WARNING: [Synth 8-7137] Register t_myaddr_reg[10] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:123]
+WARNING: [Synth 8-7137] Register t_myaddr_reg[9] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:123]
+WARNING: [Synth 8-7137] Register t_myaddr_reg[8] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:123]
+WARNING: [Synth 8-7137] Register t_myaddr_reg[7] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:123]
+WARNING: [Synth 8-7137] Register t_myaddr_reg[6] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:123]
+WARNING: [Synth 8-7137] Register t_myaddr_reg[5] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:123]
+WARNING: [Synth 8-7137] Register t_myaddr_reg[4] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:123]
+WARNING: [Synth 8-7137] Register t_myaddr_reg[3] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:123]
+WARNING: [Synth 8-7137] Register t_myaddr_reg[2] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:123]
+WARNING: [Synth 8-7137] Register t_myaddr_reg[1] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:123]
+WARNING: [Synth 8-7137] Register t_myaddr_reg[0] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:123]
+WARNING: [Synth 8-7137] Register t_rdata_1_reg[31] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:124]
+WARNING: [Synth 8-7137] Register t_rdata_1_reg[30] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:124]
+WARNING: [Synth 8-7137] Register t_rdata_1_reg[29] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:124]
+WARNING: [Synth 8-7137] Register t_rdata_1_reg[28] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:124]
+WARNING: [Synth 8-7137] Register t_rdata_1_reg[27] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:124]
+WARNING: [Synth 8-7137] Register t_rdata_1_reg[26] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:124]
+WARNING: [Synth 8-7137] Register t_rdata_1_reg[25] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:124]
+WARNING: [Synth 8-7137] Register t_rdata_1_reg[24] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:124]
+WARNING: [Synth 8-7137] Register t_rdata_1_reg[23] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:124]
+WARNING: [Synth 8-7137] Register t_rdata_1_reg[22] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:124]
+WARNING: [Synth 8-7137] Register t_rdata_1_reg[21] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:124]
+WARNING: [Synth 8-7137] Register t_rdata_1_reg[20] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:124]
+WARNING: [Synth 8-7137] Register t_rdata_1_reg[19] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:124]
+WARNING: [Synth 8-7137] Register t_rdata_1_reg[18] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:124]
+WARNING: [Synth 8-7137] Register t_rdata_1_reg[17] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:124]
+WARNING: [Synth 8-7137] Register t_rdata_1_reg[16] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:124]
+WARNING: [Synth 8-7137] Register t_rdata_1_reg[15] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:124]
+WARNING: [Synth 8-7137] Register t_rdata_1_reg[14] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:124]
+WARNING: [Synth 8-7137] Register t_rdata_1_reg[13] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:124]
+WARNING: [Synth 8-7137] Register t_rdata_1_reg[12] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:124]
+WARNING: [Synth 8-7137] Register t_rdata_1_reg[11] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:124]
+WARNING: [Synth 8-7137] Register t_rdata_1_reg[10] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:124]
+WARNING: [Synth 8-7137] Register t_rdata_1_reg[9] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:124]
+WARNING: [Synth 8-7137] Register t_rdata_1_reg[8] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:124]
+WARNING: [Synth 8-7137] Register t_rdata_1_reg[7] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:124]
+WARNING: [Synth 8-7137] Register t_rdata_1_reg[6] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:124]
+WARNING: [Synth 8-7137] Register t_rdata_1_reg[5] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:124]
+WARNING: [Synth 8-7137] Register t_rdata_1_reg[4] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:124]
+WARNING: [Synth 8-7137] Register t_rdata_1_reg[3] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:124]
+WARNING: [Synth 8-7137] Register t_rdata_1_reg[2] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:124]
+WARNING: [Synth 8-7137] Register t_rdata_1_reg[1] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:124]
+WARNING: [Synth 8-7137] Register t_rdata_1_reg[0] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:124]
+WARNING: [Synth 8-7137] Register t_pseed_reg[15] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:125]
+WARNING: [Synth 8-7137] Register t_pseed_reg[14] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:125]
+WARNING: [Synth 8-7137] Register t_pseed_reg[13] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:125]
+WARNING: [Synth 8-7137] Register t_pseed_reg[12] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:125]
+WARNING: [Synth 8-7137] Register t_pseed_reg[11] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:125]
+WARNING: [Synth 8-7137] Register t_pseed_reg[10] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:125]
+WARNING: [Synth 8-7137] Register t_pseed_reg[9] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:125]
+WARNING: [Synth 8-7137] Register t_pseed_reg[8] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:125]
+WARNING: [Synth 8-7137] Register t_pseed_reg[7] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:125]
+WARNING: [Synth 8-7137] Register t_pseed_reg[6] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:125]
+WARNING: [Synth 8-7137] Register t_pseed_reg[5] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:125]
+WARNING: [Synth 8-7137] Register t_pseed_reg[4] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:125]
+WARNING: [Synth 8-7137] Register t_pseed_reg[3] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:125]
+WARNING: [Synth 8-7137] Register t_pseed_reg[2] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:125]
+WARNING: [Synth 8-7137] Register t_pseed_reg[1] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:125]
+WARNING: [Synth 8-7137] Register t_pseed_reg[0] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:125]
+WARNING: [Synth 8-7137] Register t_rdata_2_reg[31] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:126]
+WARNING: [Synth 8-7137] Register t_rdata_2_reg[30] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:126]
+WARNING: [Synth 8-7137] Register t_rdata_2_reg[29] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:126]
+WARNING: [Synth 8-7137] Register t_rdata_2_reg[28] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:126]
+WARNING: [Synth 8-7137] Register t_rdata_2_reg[27] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:126]
+WARNING: [Synth 8-7137] Register t_rdata_2_reg[26] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:126]
+WARNING: [Synth 8-7137] Register t_rdata_2_reg[25] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:126]
+WARNING: [Synth 8-7137] Register t_rdata_2_reg[24] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:126]
+WARNING: [Synth 8-7137] Register t_rdata_2_reg[23] in module top_level has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:126]
+INFO: [Common 17-14] Message 'Synth 8-7137' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-6155] done synthesizing module 'top_level' (19#1) [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/sources_1/new/top_level.sv:23]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1719.816 ; gain = 127.301
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1719.816 ; gain = 127.301
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1719.816 ; gain = 127.301
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.204 . Memory (MB): peak = 1719.816 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [d:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/test_miner_ton.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc] for cell 'clk_wiz_0_/inst'
+Finished Parsing XDC File [d:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/test_miner_ton.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc] for cell 'clk_wiz_0_/inst'
+Parsing XDC File [d:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/test_miner_ton.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'clk_wiz_0_/inst'
+Finished Parsing XDC File [d:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/test_miner_ton.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'clk_wiz_0_/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [d:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/test_miner_ton.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_level_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_level_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Timing 38-2] Deriving generated clocks
+Parsing XDC File [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/constrs_1/new/top_level_constraints.xdc]
+Finished Parsing XDC File [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/constrs_1/new/top_level_constraints.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.srcs/constrs_1/new/top_level_constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_level_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_level_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.runs/synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.runs/synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_level_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_level_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1781.930 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.052 . Memory (MB): peak = 1781.930 ; gain = 0.000
+WARNING: [Designutils 20-4072] Reference run did not run incremental synthesis because the design is too small; reverting to default synthesis
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1781.930 ; gain = 189.414
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k325tffg676-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1781.930 ; gain = 189.414
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for clk_wiz_0_/inst. (constraint file  D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.runs/synth_1/dont_touch.xdc, line 10).
+Applied set_property KEEP_HIERARCHY = SOFT for clk_wiz_0_. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1781.930 ; gain = 189.414
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'crc32'
+INFO: [Synth 8-802] inferred FSM for state register 'r_SM_Main_reg' in module 'uart_tx_m'
+INFO: [Synth 8-802] inferred FSM for state register 'rec_state_reg' in module 'cmd_packets_ctrl'
+INFO: [Synth 8-802] inferred FSM for state register 'trs_state_reg' in module 'cmd_packets_ctrl'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'sha256_2r'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'sha256_1r'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'tasks_generator'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              STATE_IDLE |                                0 |                               00
+           STATE_COMPUTE |                                1 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'crc32'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  s_IDLE |                              000 |                              000
+          s_TX_START_BIT |                              001 |                              001
+          s_TX_DATA_BITS |                              010 |                              010
+           s_TX_STOP_BIT |                              011 |                              011
+               s_CLEANUP |                              100 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'r_SM_Main_reg' using encoding 'sequential' in module 'uart_tx_m'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+          STATE_REC_IDLE |                               00 |                              000
+           STATE_REC_GNB |                               01 |                              001
+      STATE_REC_CL_CRC32 |                               10 |                              011
+      STATE_REC_CH_CRC32 |                               11 |                              010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'rec_state_reg' using encoding 'sequential' in module 'cmd_packets_ctrl'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+          STATE_TRS_IDLE |                           000001 |                              000
+      STATE_TRS_CL_CRC32 |                           000010 |                              001
+      STATE_TRS_PH_CRC32 |                           000100 |                              011
+           STATE_TRS_PHB |                           001000 |                              010
+           STATE_TRS_WTB |                           010000 |                              110
+        STATE_TRS_WT_SUP |                           100000 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'trs_state_reg' using encoding 'one-hot' in module 'cmd_packets_ctrl'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 S0_IDLE |                              000 |                            00000
+                      S1 |                              001 |                            00001
+                      S2 |                              010 |                            00011
+                      S3 |                              011 |                            00010
+                      S4 |                              100 |                            00110
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'sha256_2r'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 S0_IDLE |                              000 |                            00000
+                      S1 |                              001 |                            00001
+                      S2 |                              010 |                            00011
+                      S3 |                              011 |                            00010
+                      S4 |                              100 |                            00110
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'sha256_1r'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                              000 |                              000
+                 iSTATE0 |                              001 |                              001
+                 iSTATE1 |                              010 |                              011
+                 iSTATE3 |                              011 |                              110
+                 iSTATE2 |                              100 |                              010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'tasks_generator'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1781.930 ; gain = 189.414
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input  512 Bit       Adders := 2     
+	   2 Input   33 Bit       Adders := 1     
+	   4 Input   32 Bit       Adders := 8     
+	   3 Input   32 Bit       Adders := 2     
+	   2 Input   32 Bit       Adders := 23    
+	   2 Input   17 Bit       Adders := 2     
+	   2 Input   16 Bit       Adders := 3     
+	   2 Input    8 Bit       Adders := 2     
+	   2 Input    7 Bit       Adders := 1     
+	   2 Input    6 Bit       Adders := 6     
+	   2 Input    3 Bit       Adders := 2     
+	   2 Input    1 Bit       Adders := 1     
++---XORs : 
+	   3 Input     32 Bit         XORs := 16    
+	   2 Input     32 Bit         XORs := 6     
+	   2 Input      1 Bit         XORs := 30    
+	   3 Input      1 Bit         XORs := 16    
+	   4 Input      1 Bit         XORs := 14    
+	   5 Input      1 Bit         XORs := 16    
+	   6 Input      1 Bit         XORs := 12    
+	   7 Input      1 Bit         XORs := 8     
+	   9 Input      1 Bit         XORs := 6     
++---Registers : 
+	              512 Bit    Registers := 1     
+	              256 Bit    Registers := 2     
+	               33 Bit    Registers := 1     
+	               32 Bit    Registers := 163   
+	               21 Bit    Registers := 1     
+	               17 Bit    Registers := 2     
+	               16 Bit    Registers := 5     
+	                8 Bit    Registers := 546   
+	                6 Bit    Registers := 5     
+	                3 Bit    Registers := 3     
+	                1 Bit    Registers := 25    
++---Muxes : 
+	   5 Input  512 Bit        Muxes := 1     
+	   2 Input   33 Bit        Muxes := 1     
+	   5 Input   32 Bit        Muxes := 74    
+	   2 Input   32 Bit        Muxes := 21    
+	   2 Input   17 Bit        Muxes := 1     
+	   4 Input   17 Bit        Muxes := 1     
+	   6 Input   17 Bit        Muxes := 1     
+	   5 Input   16 Bit        Muxes := 3     
+	   2 Input   16 Bit        Muxes := 1     
+	   6 Input   16 Bit        Muxes := 1     
+	   5 Input    8 Bit        Muxes := 2     
+	   6 Input    8 Bit        Muxes := 66    
+	   2 Input    8 Bit        Muxes := 127   
+	   4 Input    8 Bit        Muxes := 37    
+	  11 Input    8 Bit        Muxes := 1     
+	   4 Input    6 Bit        Muxes := 3     
+	   6 Input    6 Bit        Muxes := 3     
+	   2 Input    6 Bit        Muxes := 2     
+	   5 Input    3 Bit        Muxes := 4     
+	   2 Input    3 Bit        Muxes := 13    
+	   8 Input    3 Bit        Muxes := 1     
+	   6 Input    3 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 2     
+	   3 Input    2 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 5     
+	   2 Input    1 Bit        Muxes := 288   
+	   5 Input    1 Bit        Muxes := 208   
+	   3 Input    1 Bit        Muxes := 1     
+	   6 Input    1 Bit        Muxes := 77    
+	   4 Input    1 Bit        Muxes := 90    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 840 (col length:140)
+BRAMs: 890 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:36 ; elapsed = 00:01:37 . Memory (MB): peak = 1842.016 ; gain = 249.500
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|sha256_2r   | K          | 64x32         | LUT            | 
+|sha256_1r   | K          | 64x32         | LUT            | 
+|sha256_1r   | K          | 64x32         | LUT            | 
+|sha256_2r   | K          | 64x32         | LUT            | 
++------------+------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:40 ; elapsed = 00:01:41 . Memory (MB): peak = 1842.016 ; gain = 249.500
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:47 ; elapsed = 00:01:48 . Memory (MB): peak = 1927.473 ; gain = 334.957
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:53 ; elapsed = 00:01:54 . Memory (MB): peak = 1927.473 ; gain = 334.957
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:57 ; elapsed = 00:01:58 . Memory (MB): peak = 1927.473 ; gain = 334.957
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:57 ; elapsed = 00:01:58 . Memory (MB): peak = 1927.473 ; gain = 334.957
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:59 ; elapsed = 00:02:00 . Memory (MB): peak = 1927.473 ; gain = 334.957
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:59 ; elapsed = 00:02:00 . Memory (MB): peak = 1927.473 ; gain = 334.957
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:00 ; elapsed = 00:02:01 . Memory (MB): peak = 1927.473 ; gain = 334.957
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:00 ; elapsed = 00:02:01 . Memory (MB): peak = 1927.473 ; gain = 334.957
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |BUFG      |     2|
+|2     |CARRY4    |   688|
+|3     |LUT1      |     1|
+|4     |LUT2      |  2095|
+|5     |LUT3      |  2187|
+|6     |LUT4      |  1554|
+|7     |LUT5      |  1084|
+|8     |LUT6      |  5888|
+|9     |MUXF7     |  2059|
+|10    |MUXF8     |   704|
+|11    |PLLE2_ADV |     1|
+|12    |FDCE      |  8768|
+|13    |FDPE      |    70|
+|14    |FDRE      |  1240|
+|15    |IBUF      |     3|
+|16    |OBUF      |     2|
++------+----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:00 ; elapsed = 00:02:01 . Memory (MB): peak = 1927.473 ; gain = 334.957
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:47 ; elapsed = 00:01:57 . Memory (MB): peak = 1927.473 ; gain = 272.844
+Synthesis Optimization Complete : Time (s): cpu = 00:02:00 ; elapsed = 00:02:01 . Memory (MB): peak = 1927.473 ; gain = 334.957
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.252 . Memory (MB): peak = 1927.473 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 3452 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1927.473 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: d8287b9b
+INFO: [Common 17-83] Releasing license: Synthesis
+79 Infos, 103 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:02:07 ; elapsed = 00:02:08 . Memory (MB): peak = 1927.473 ; gain = 334.957
+INFO: [Common 17-1381] The checkpoint 'D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.runs/synth_1/top_level.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_level_utilization_synth.rpt -pb top_level_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Jun 27 15:09:57 2022...

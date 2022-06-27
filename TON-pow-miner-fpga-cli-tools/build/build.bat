@@ -1,0 +1,1 @@
+cmake -A x64 -DCMAKE_TOOLCHAIN_FILE=C:\DEV\vcpkg\scripts\buildsystems\vcpkg.cmake -DZLIB_FOUND=1 -DCMAKE_CXX_FLAGS="/DTD_WINDOWS=1 /EHsc /bigobj /W0" -DTON_USE_ABSEIL=OFF -DCMAKE_BUILD_TYPE=Release ..\src\

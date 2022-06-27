@@ -1,0 +1,312 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
+| Date         : Mon Jun 27 15:15:11 2022
+| Host         : DESKTOP-MM296OU running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file top_level_control_sets_placed.rpt
+| Design       : top_level
+| Device       : xc7k325t
+--------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |   234 |
+|    Minimum number of control sets                        |   234 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    42 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |   234 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     0 |
+| >= 6 to < 8        |     3 |
+| >= 8 to < 10       |    67 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     2 |
+| >= 16              |   162 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               0 |            0 |
+| No           | No                    | Yes                    |             139 |           51 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |            1240 |          435 |
+| Yes          | No                    | Yes                    |            8699 |         4162 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++---------------------------+------------------------------------------------------------------------+-------------------------------------------+------------------+----------------+--------------+
+|        Clock Signal       |                              Enable Signal                             |              Set/Reset Signal             | Slice Load Count | Bel Load Count | Bels / Slice |
++---------------------------+------------------------------------------------------------------------+-------------------------------------------+------------------+----------------+--------------+
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/trs_bytes_cnt[5]_i_1_n_0                            | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                2 |              6 |         3.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_tx_m_0/E[0]                                    | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                2 |              6 |         3.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/E[0]                                                | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                5 |              7 |         1.40 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[4]_4[0]              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                1 |              8 |         8.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[2]_rep_2[0]          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                2 |              8 |         4.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[5]_12[0]             | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                2 |              8 |         4.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[5]_2[0]              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                1 |              8 |         8.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[0]_rep_5[0]          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                3 |              8 |         2.67 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[1]_8[0]              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                1 |              8 |         8.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[1]_7[0]              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                4 |              8 |         2.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[1]_5[0]              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                4 |              8 |         2.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/r_Rx_DV_reg_0[0]                        | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                3 |              8 |         2.67 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[1]_0[0]              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                8 |              8 |         1.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[1]_2[0]              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                1 |              8 |         8.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[1]_6[0]              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                5 |              8 |         1.60 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[1]_9[0]              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                2 |              8 |         4.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[5]_1[0]              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                3 |              8 |         2.67 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/r_Rx_DV_reg_1[0]                        | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                2 |              8 |         4.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[0][0]                | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                3 |              8 |         2.67 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[0]_rep__3[0]         | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                3 |              8 |         2.67 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[0]_rep_2[0]          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                7 |              8 |         1.14 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[1]_rep__2[0]         | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                2 |              8 |         4.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_tx_m_0_load_byte                               | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                3 |              8 |         2.67 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[5]_7[0]              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                8 |              8 |         1.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[0]_rep_1[0]          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                6 |              8 |         1.33 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[0]_rep_7[0]          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                4 |              8 |         2.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[1]_4[0]              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                3 |              8 |         2.67 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[1]_rep__2_0[0]       | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                2 |              8 |         4.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[1]_rep__3[0]         | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                2 |              8 |         4.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[0]_rep_6[0]          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                1 |              8 |         8.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[5]_8[0]              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                4 |              8 |         2.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[0]_rep_4[0]          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                2 |              8 |         4.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[0]_rep[0]            | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                8 |              8 |         1.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[0]_0[0]              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                4 |              8 |         2.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_tx_m_0/r_Tx_Data                               | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                3 |              8 |         2.67 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_tx_m_0/r_SM_Main[2]                            | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                3 |              8 |         2.67 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/E[0]                                    | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                8 |              8 |         1.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[0]_rep_3[0]          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                5 |              8 |         1.60 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[0]_rep_0[0]          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                7 |              8 |         1.14 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[1][0]                | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                6 |              8 |         1.33 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[1]_1[0]              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                6 |              8 |         1.33 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[1]_3[0]              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                2 |              8 |         4.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[1]_rep__2_1[0]       | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                1 |              8 |         8.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[2]_rep[0]            | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                6 |              8 |         1.33 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[2]_rep_0[0]          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                5 |              8 |         1.60 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[2]_rep_1[0]          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                1 |              8 |         8.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[4]_5[0]              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                3 |              8 |         2.67 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[5]_5[0]              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                2 |              8 |         4.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[5]_11[0]             | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                2 |              8 |         4.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[5]_3[0]              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                1 |              8 |         8.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[3]_2[0]              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                2 |              8 |         4.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[5]_4[0]              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                3 |              8 |         2.67 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[2]_rep_3[0]          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                1 |              8 |         8.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[4]_8[0]              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                1 |              8 |         8.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[3]_0[0]              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                2 |              8 |         4.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[5][0]                | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                7 |              8 |         1.14 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[3][0]                | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                5 |              8 |         1.60 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[4]_7[0]              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                2 |              8 |         4.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[4]_2[0]              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                3 |              8 |         2.67 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[5]_0[0]              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                4 |              8 |         2.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[5]_10[0]             | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                6 |              8 |         1.33 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[3]_1[0]              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                2 |              8 |         4.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[4]_3[0]              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                2 |              8 |         4.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[4]_6[0]              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                2 |              8 |         4.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[4][0]                | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                5 |              8 |         1.60 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[5]_9[0]              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                1 |              8 |         8.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[5]_6[0]              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                4 |              8 |         2.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[3]_3[0]              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                2 |              8 |         4.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[4]_0[0]              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                8 |              8 |         1.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/rec_packet_len_reg[4]_1[0]              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                6 |              8 |         1.33 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/crc_1_bytes_cnt[5]_i_1_n_0                          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                7 |             14 |         2.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/FSM_sequential_rec_state_reg[0]_0[0]    | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                7 |             14 |         2.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/r_Clock_Count[15]_i_1_n_0               | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                7 |             16 |         2.29 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/task_core_num_cnt[15]_i_1_n_0                     | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                5 |             16 |         3.20 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/o_tasks_srs_acks_qnt[15]_i_1_n_0                  | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                3 |             16 |         5.33 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/rec_state__0[1]                                     | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                6 |             17 |         2.83 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/trs_timer[16]_i_1_n_0                               | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                3 |             17 |         5.67 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/uart_rx_m_0/FSM_sequential_rec_state_reg[1]_inv_2   | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                8 |             19 |         2.38 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[21][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               23 |             32 |         1.39 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[20][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               22 |             32 |         1.45 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[25][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               18 |             32 |         1.78 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[28][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               27 |             32 |         1.19 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[27][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               24 |             32 |         1.33 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[36][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               24 |             32 |         1.33 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[37][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               17 |             32 |         1.88 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[39][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               24 |             32 |         1.33 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[40][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               20 |             32 |         1.60 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[38][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               18 |             32 |         1.78 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[35][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               18 |             32 |         1.78 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[42][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               24 |             32 |         1.33 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[43][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               24 |             32 |         1.33 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[44][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               26 |             32 |         1.23 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[32][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               20 |             32 |         1.60 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[34][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               19 |             32 |         1.68 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[30][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               18 |             32 |         1.78 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[31][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               13 |             32 |         2.46 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[33][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               17 |             32 |         1.88 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[41][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               24 |             32 |         1.33 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[48][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               22 |             32 |         1.45 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[47][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               15 |             32 |         2.13 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[46][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               16 |             32 |         2.00 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[50][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               22 |             32 |         1.45 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[54][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               23 |             32 |         1.39 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[55][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               26 |             32 |         1.23 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[58][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               23 |             32 |         1.39 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[59][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               24 |             32 |         1.33 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[56][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               26 |             32 |         1.23 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[52][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               21 |             32 |         1.52 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[53][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               23 |             32 |         1.39 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[57][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               19 |             32 |         1.68 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[45][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               29 |             32 |         1.10 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[49][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               23 |             32 |         1.39 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[51][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               24 |             32 |         1.33 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[4][31]_i_1__0_n_0  | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               11 |             32 |         2.91 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[62][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               21 |             32 |         1.52 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[60][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               26 |             32 |         1.23 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[5][31]_i_1__0_n_0  | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               14 |             32 |         2.29 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[3][31]_i_1__0_n_0  | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               14 |             32 |         2.29 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[8][31]_i_1__0_n_0  | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               17 |             32 |         1.88 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/state_reg_1[0]                                      | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                7 |             32 |         4.57 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/trs_packet[47][7]_i_1_n_0                           | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               14 |             32 |         2.29 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/trs_packet[4][7]_i_1_n_0                            | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               16 |             32 |         2.00 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/trs_packet[63][7]_i_1_n_0                           | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               15 |             32 |         2.13 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/trs_packet[31][7]_i_1_n_0                           | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               17 |             32 |         1.88 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/trs_packet[36][7]_i_1_n_0                           | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               11 |             32 |         2.91 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/trs_packet[20][7]_i_1_n_0                           | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               15 |             32 |         2.13 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/trs_packet[15][7]_i_1_n_0                           | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               13 |             32 |         2.46 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/trs_packet[52][7]_i_1_n_0                           | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               20 |             32 |         1.60 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[63][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               23 |             32 |         1.39 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[7][31]_i_1__0_n_0  | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               17 |             32 |         1.88 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[6][31]_i_1__0_n_0  | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               12 |             32 |         2.67 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[9][31]_i_1__0_n_0  | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               10 |             32 |         3.20 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[0][31]_i_1__0_n_0  | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                9 |             32 |         3.56 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[11][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               12 |             32 |         2.67 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[10][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               17 |             32 |         1.88 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[61][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               28 |             32 |         1.14 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[13][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               10 |             32 |         3.20 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[12][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               12 |             32 |         2.67 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[19][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               22 |             32 |         1.45 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[17][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               22 |             32 |         1.45 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[16][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               18 |             32 |         1.78 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[15][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               23 |             32 |         1.39 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[18][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               24 |             32 |         1.33 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[14][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               10 |             32 |         3.20 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[29][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               28 |             32 |         1.14 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[1][31]_i_1__0_n_0  | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                9 |             32 |         3.56 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[23][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               22 |             32 |         1.45 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[24][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               25 |             32 |         1.28 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[26][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               22 |             32 |         1.45 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/crc32_0/crc_reg[31]_i_1_n_0                         | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               11 |             32 |         2.91 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/crc32_1/crc_reg[31]_i_1__0_n_0                      | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               12 |             32 |         2.67 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[1][31]_i_1_n_0           | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               11 |             32 |         2.91 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[17][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               19 |             32 |         1.68 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[18][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               17 |             32 |         1.88 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[16][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               17 |             32 |         1.88 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[15][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                9 |             32 |         3.56 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[19][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               22 |             32 |         1.45 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[0][31]_i_1_n_0           | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                7 |             32 |         4.57 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[10][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               11 |             32 |         2.91 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[11][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                8 |             32 |         4.00 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[12][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                7 |             32 |         4.57 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[13][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               12 |             32 |         2.67 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[14][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               10 |             32 |         3.20 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[2][31]_i_1__0_n_0  | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               15 |             32 |         2.13 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[32][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               18 |             32 |         1.78 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[34][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               20 |             32 |         1.60 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[22][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               25 |             32 |         1.28 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[35][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               21 |             32 |         1.52 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[36][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               20 |             32 |         1.60 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[20][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               19 |             32 |         1.68 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[23][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               25 |             32 |         1.28 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[24][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               27 |             32 |         1.19 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[28][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               25 |             32 |         1.28 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[29][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               29 |             32 |         1.10 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[30][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               19 |             32 |         1.68 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[31][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               17 |             32 |         1.88 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[33][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               18 |             32 |         1.78 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[21][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               20 |             32 |         1.60 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[26][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               30 |             32 |         1.07 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[27][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               24 |             32 |         1.33 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[25][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               24 |             32 |         1.33 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[45][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               27 |             32 |         1.19 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[40][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               24 |             32 |         1.33 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[47][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               25 |             32 |         1.28 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[41][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               25 |             32 |         1.28 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[37][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               20 |             32 |         1.60 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[48][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               18 |             32 |         1.78 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[42][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               23 |             32 |         1.39 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[46][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               23 |             32 |         1.39 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[49][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               23 |             32 |         1.39 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[38][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               23 |             32 |         1.39 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[3][31]_i_1_n_0           | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                7 |             32 |         4.57 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[2][31]_i_1_n_0           | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               10 |             32 |         3.20 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[44][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               24 |             32 |         1.33 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[43][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               24 |             32 |         1.33 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[55][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               27 |             32 |         1.19 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[58][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               26 |             32 |         1.23 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[54][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               24 |             32 |         1.33 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[52][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               26 |             32 |         1.23 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[56][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               21 |             32 |         1.52 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[4][31]_i_1_n_0           | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                8 |             32 |         4.00 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[50][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               20 |             32 |         1.60 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[53][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               22 |             32 |         1.45 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[59][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               27 |             32 |         1.19 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[51][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               21 |             32 |         1.52 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[57][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               23 |             32 |         1.39 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[5][31]_i_1_n_0           | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                9 |             32 |         3.56 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[60][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               27 |             32 |         1.19 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[61][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               25 |             32 |         1.28 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[62][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               22 |             32 |         1.45 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[63][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               20 |             32 |         1.60 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[7][31]_i_1_n_0           | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                9 |             32 |         3.56 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[6][31]_i_1_n_0           | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               10 |             32 |         3.20 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[8][31]_i_1_n_0           | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               15 |             32 |         2.13 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[9][31]_i_1_n_0           | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |                9 |             32 |         3.56 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/W[22][31]_i_1__0_n_0 | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               24 |             32 |         1.33 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/W[39][31]_i_1_n_0          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               20 |             32 |         1.60 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/rec_packet_reg[0][0]_0[0]                           | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               45 |             88 |         1.96 |
+|  clk_wiz_0_/inst/clk_out1 |                                                                        | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               51 |            139 |         2.73 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/trs_packet[32][7]_i_1_n_0                           | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               35 |            141 |         4.03 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/state_reg_0[0]                                      | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               79 |            168 |         2.13 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mc1r_start                                        | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               51 |            168 |         3.29 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/state_reg_4[0]                                      |                                           |               85 |            256 |         3.01 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/state_reg_5[0]                                      |                                           |               81 |            256 |         3.16 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/o_ready_reg_0[0]           | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |              112 |            256 |         2.29 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/H[7][31]_i_1_n_0           | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               68 |            256 |         3.76 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/cnt_Rounds_i_1_n_0   | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               65 |            261 |         4.02 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/mcore_1r_1/sha256_1r_1/a                          | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |               96 |            302 |         3.15 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/a                    | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |              100 |            303 |         3.03 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/state_reg_6[0]                                      |                                           |              147 |            344 |         2.34 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/E[0]                                              | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |              138 |            344 |         2.49 |
+|  clk_wiz_0_/inst/clk_out1 | cmd_packets_ctrl_0/rec_packet_reg[0][0]_2[0]                           |                                           |              122 |            384 |         3.15 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/tg_1/rdata_cnt[511]_i_1_n_0                            | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |              150 |            512 |         3.41 |
+|  clk_wiz_0_/inst/clk_out1 | system_mcores_1/genblk1[0].mcore_2r_x/sha256_2r_1/state_reg_0[0]       | system_mcores_1/tg_1/mcore_1r_1/i_n_reset |              273 |            768 |         2.81 |
++---------------------------+------------------------------------------------------------------------+-------------------------------------------+------------------+----------------+--------------+
+
+

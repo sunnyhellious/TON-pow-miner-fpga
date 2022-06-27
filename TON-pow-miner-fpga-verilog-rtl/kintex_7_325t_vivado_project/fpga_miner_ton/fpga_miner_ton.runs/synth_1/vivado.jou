@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Mon Jun 27 15:07:42 2022
+# Process ID: 13632
+# Current directory: D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.runs/synth_1
+# Command line: vivado.exe -log top_level.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_level.tcl
+# Log file: D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.runs/synth_1/top_level.vds
+# Journal file: D:/pow-miner-fpga/TON-pow-miner-fpga-verilog/kintex_7_325t_vivado_project/fpga_miner_ton/fpga_miner_ton.runs/synth_1\vivado.jou
+# Running On: DESKTOP-MM296OU, OS: Windows, CPU Frequency: 3700 MHz, CPU Physical cores: 12, Host memory: 34282 MB
+#-----------------------------------------------------------
+source top_level.tcl -notrace

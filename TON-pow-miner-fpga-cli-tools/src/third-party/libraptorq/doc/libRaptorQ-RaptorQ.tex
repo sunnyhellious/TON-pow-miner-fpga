@@ -1,0 +1,599 @@
+%    Copyright (C)  2018, Luca Fulchir<luca@fulchir.it>
+%    Permission is granted to copy, distribute and/or modify this document
+%    under the terms of the GNU Free Documentation License, Version 1.3
+%    or any later version published by the Free Software Foundation;
+%    with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+%    A copy of the license is included in the section entitled "GNU
+%    Free Documentation License".
+
+
+
+\documentclass[11pt,a4paper]{refart}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{makeidx}
+\usepackage{verbatimbox}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=single,                    % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=C,                 % the language of the code
+  %otherkeywords={*,...},            % if you want to add more keywords to the set
+  %numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  %numbersep=5pt,                   % how far the line-numbers are from the code
+  %numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=4,                       % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+\title{Using libRaptorQ library: RAW interface}
+\date{\today}
+\makeindex
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+
+\textbf{libRaptorQ} is a C++11
+ implementation of the RaptorQ Forward Error Correction. It includes two interfaces, one derived from the \href{https://tools.ietf.org/html/rfc6330}{RFC6330} standard, and one RAW API for a more flexible and easy usage.
+
+This document is only about the RAW interface.
+
+The implementation was started as a university laboratory project, and will be later used and included in \href{https://www.fenrirproject.org}{Fenrir}, the
+maintainer's master thesis project.
+
+
+
+\end{abstract}
+
+\vfill\hfill
+\begin{verbbox}[\tiny]
+Copyright (C)  2015-2018, Luca Fulchir<luker@fenrirproject.org>
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3
+or any later version published by the Free Software Foundation;
+with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+\end{verbbox}
+\theverbbox
+
+\newpage
+\tableofcontents
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Contacts}\index{Contacts}
+
+The main development and dicussions on the project, along with bug reporting, happens on
+\href{https://fenrirproject.org/Luker/libRaptorQ}{the main website}.
+
+\marginlabel{Mailing Lists} Mailing lists are available at \href{https://fenrirproject.org/lists}{https://fenrirproject.org/lists}\\
+The two mailing lists are for development and announcements, but due to the low traffic of the development mailing list, it
+can also be used by users for questions on the project.
+
+\marginlabel{IRC} Since there are not many developers for now, the main irc channel is \textbf{\#fenrirproject} on freenode
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Build \& install}
+\subsection{Get the source code}
+This document follows the 1.0 stable release.
+
+You can get the tarballs from the main website here:\\
+\href{https://fenrirproject.org/Luker/libRaptorQ/tags}{https://fenrirproject.org/Luker/libRaptorQ/tags}
+
+Or you can check out the repository (warning: development in progress):
+
+\begin{lstlisting}[language=bash,breaklines=true]
+$ git clone --recurse-submodules \
+		https://fenrirproject.org/Luker/libRaptorQ.git
+\end{lstlisting}
+
+You can also get it from github:
+
+\begin{lstlisting}[language=bash,breaklines=true]
+$ git clone --recurse-submodules \
+		https://github.com/LucaFulchir/libRaptorQ.git
+\end{lstlisting}
+
+\index{GPG}\marginlabel{GPG verification:}
+Once you have cloned it, it's always a good thing to check the repository gpg
+signatures, so you can import my key with:
+
+\begin{lstlisting}[language=bash,breaklines=true]
+$ gpg --keyserver pgp.mit.edu --recv-key \
+				7393DAD255BEB5751DBDA04AB11CD823BA278C85
+\end{lstlisting}
+
+
+Now you have the source, and the key, it's enough to check the signature of the
+last commit:
+
+\begin{verbatim}
+$ git log -n 1 --show-signature
+\end{verbatim}
+
+The important part is that you get something like this:
+
+\begin{verbbox}[\footnotesize]
+ gpg: Signature made Mon 11 Dec 2017 21:55:28 CET
+ gpg:                using RSA key 8F7474044095B405D0F042F0A2CCA134BC7C8572
+ gpg: Good signature from "Luca Fulchir <luker@fenrirproject.org>" [unknown]
+ gpg:                 aka "Luca Fulchir <luca@fulchir.it>" [unknown]
+ gpg: WARNING: This key is not certified with a trusted signature!
+ gpg:          There is no indication that the signature belongs to the owner.
+ Primary key fingerprint: 7393 DAD2 55BE B575 1DBD A04A B11C D823 BA27 8C85
+\end{verbbox}
+\theverbbox
+
+And as long as you got the right key, and you find the \textbf{"gpg: Good signature"} string,
+you can be sure you have the right code.
+
+The main development happens in the $master$ branch, while we keep one branch for each stable version.
+
+
+\subsection{Dependencies}\index{dependencies}
+
+libRaptorQ has 4 dependencies:
+\begin{description}
+\item[\textbf{Eigen3}] This is used for matrix manipulation, which is a big part of RaptorQ.
+\item[\textbf{lz4}] Used to compress cached precomputations.
+\item[\textbf{git}] This is used not only to get the source, but also by the build system. We get the last git commit id and feed it to clang or gcc as seed for their internal random number generator. This makes it possible to have reproducible builds.
+\item[\textbf{optionparser}] Library used to parse the command line easily in C++, without exceptions.
+\end{description}
+
+All dependencies are included in the sources, so you do not need to download and compile them.\\
+Eigen3 is only needed at build time, so there is no need to download it again. we use the 3.3.4 version.\\
+LZ4 is included as a git submodule. if you do not have it, run:
+\begin{verbatim}
+$ git submodule init
+$ git submodule update
+\end{verbatim}
+and LZ4 w
+ill be built
+ statically in the library (it will not be installed on the system)
+
+\subsection{Build \& Install}
+
+libRaptorQ uses the cMake build system, so things are fairly standard:
+
+\begin{verbatim}
+$ cd libRaptorQ.git
+$ mkdir build
+$ cd build
+$ cmake ../
+$ make -j 4
+\end{verbatim}
+
+By default, the libRaptorQ project tries to have deterministic builds. This means that if you compile things twice, or with two different computers, the
+hash of the resulting library will be the same, provided that the same compiler (clang, gcc 4.8, gcc 4.9 etc) was used. Currently the only exception is the clang
+compiler with the \textit{PROFILING} option enabled, and this will not likely be solved.
+
+\index{cMake}
+There are lots of options, you can use in cmake. As always, you can change them by adding ``\textbf{-Dcmake\_option=cmake\_value}'' when calling cmake.
+
+You can always use the cmake-gui or ccmake commands to have the list of possible options.
+
+The ones we recognize are:
+
+\begin{description}
+\item[LTO] ON/OFF. Default:\textbf{ON}. Enables \textit{Link Time Optimizatios} for clang or gcc. Makes libraries smaller and better optimized.
+\item[PROFILING] ON/OFF. Default:\textbf{ON}.
+Profiling compiles everything once, then runs a test to see which code paths are used more, and then
+recompiles everything again, but making sure that the binary is optimized for those paths. Works with clang and gcc. Provides a slight speedup.
+\item[CMAKE\_C\_COMPILER] gcc and clang are directly supported. other should work, too. This is only used if you want to build the C example.
+\item[CMAKE\_CXX\_COMPILER] g++, clang++ are directly supported. other should work, too.
+\item[CLANG\_STDLIB] ON/OFF. Default:\textbf{OFF}.use clang's libc++ standard library. Only available with clang.
+\item[CMAKE\_BUILD\_TYPE] Type of build. you can choose between ``Debug'', ``Release'', ``MinSizeRel'' or ``RelWithDebInfo''
+\item[CMAKE\_INSTALL\_PREFIX] Default to \textit{/usr/local}. Change it to fit your distribution guidelines.
+\item[RQ\_ENDIANNESS] \texttt{Auto,BigEndian,LittleEndian} Force the build to use one endianness ot the other
+\item[RQ\_LINKER] \texttt{Auto,gold,ld,bsd} Force the build to use one linker or the other
+\item[USE\_LZ4] ON/OFF. Default:\textbf{ON}. compile with support for lz4
+\end{description}
+
+Then you can build everything by running:
+\begin{verbatim}
+$ make -j 4
+\end{verbatim}
+Of course, you can configure the number of parallel jobs (the \textit{-j} parameter) to be what you need.
+
+\marginlabel{Optional make targets:}
+The following optional targets are also supported:
+\begin{verbatim}
+$ make docs tests examples
+$ make everything
+\end{verbatim}
+The ``docs'' target builds this document, but you need latex with the refman style.
+The tests are only useful to check perfromance of rfc compliance right now. ``examples'' compiles the C and C++ examples, which will not be installed.
+
+\index{Install}\marginlabel{\textbf{Install:}}
+The installation process is very simple:
+
+\begin{verbatim}
+$ make install DESTDIR=...
+\end{verbatim}
+
+You can change the \textit{DESTDIR} parameter to fit your distribution guidelines.
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Working with RaptorQ}
+\subsection{Theory (you really need this)}\index{Theory}
+
+To be able to work with liRaptorQ, you must first understand how the RaptorQ algorithms works. We won't go into the details, but just what you need
+to be able to tune the algorithm to your needs.
+
+
+\marginlabel{Fountain codes:}
+Fountain codes are a special \textit{Forward-Error-Correcting} code class, which characteristic is simple: if you want to send $K$ packets, you actually
+send $K+X$ packets, and the receiver only needs to get any $K$ packets to be able to reconstruct your data. The number $X$ of overhead packets can be as big
+as you need (theoretically infinite), so you can tune it to be slightly higher than the expected packet loss.
+
+\marginlabel{Systematic codes:} RaptorQ is also a systematic code. This means that those first $K$ packets are the input \textit{as-is} (\textbf{source symbols}),
+and the $X$ packets (\textbf{repair symbols}) have the information needed to recover any of the lost source packets. This has the big advantage of
+avoiding any kind of time and memory consuming decoding if there is no packet loss during the transmission.
+
+\marginlabel{Complexity:} The RaptorQ algorithm is often presented as having a linear time encoder and decoder. This is both false and misleading.
+Generating the source or repair symbols from the intermediate symbols has linear complexity. Generating the intermediate symbols has cubic complexity on the
+number of symbols. Which is a completely different thing.
+It is still very quick. On a core i7, 2.4Ghz, you need to wait \textit{0.4ms} for $10$ symbols, \textit{280ms} for 1.000 symbols, but it can take an hour for $27.000$ symbols.
+RaptorQ handles up to $56.403$ symbols.
+
+\marginlabel{\textbf{Caching}} libRaptorQ can work with big matrices that take a lot of time to compute. For this reason the matrices can be saved once they have
+been computed the first time. libRaptorQ uses a \textbf{local} cache. The matrix can be compressed with LZ4.
+
+\subsection{RaptorQ: Blocks \& Symbols}
+
+To understand how to properly use and tune libRaptorQ, you first need to understand how RaptorQ handles its inputs, outputs, and what the time and memory
+constraints are.
+
+\index{Sequencing}\marginlabel{Input sequencing:}
+The RC6330 API needs to have the whole input you want to send before it can start working.\\
+This means that You should buffer the data you are sending, and then when you have a block big enough you pass it to libRaptorQ, which will start generating symbols.
+
+Contrary to the RFC6330, the RAW api is about a single block of data. You will have to divide your input in multiple blocks by hand, and decide by yourself how to send the encoded symbols. This will increase your flexibility, at the expense of not being conformant to RFC6330.
+Note that a RaptorQ block does not need to be completely filled since the block is automatically padded with zeros, but you need to somehow tell the receiver how much data you have in that block so that it can know where the padding starts. RFC6330 does this with the \texttt{OTI} parameters. \textbf{with the RAW API you will have to do it by yourself}.
+-
+
+\index{Sequencing!Sizes}\marginlabel{Sizes:} Each block can have up to \textit{$56.403$ symbols}, and each
+symbol can have up to \textit{size\_t bytes} long ($2^{32}$ on 32 bit machines, $2^{
+	64}$ on 64 bits
+). Please remember the Complexity discussion before using high values.
+
+
+\index{Interleaving}\marginlabel{Interleaving:}
+Contrary to the RFC6330 the RAW api does not include any kind of interleaving
+
+\marginlabel{Memory and Time:}
+Memory and time requirements are to be considered since RaptorQ needs to run a cubic algorithm on matrix of size $K*K$, where $K$ is the number of symbols in each block.\\
+The algorithm needs to keep in memory two of these matrices, although most of the work is done on only one.\\
+This is actually a lot. More benchmarks and optimizations will come later, for now remember that with 10 symbols it takes something like 0.4ms on a core i7 2.4GHZ, 280ms with 1000 symbols, and up to an hour with 27.000 symbols. YMMV.
+
+
+\subsection{C++ interface}
+\index{Interface!C++}
+To use the C++ interface you only need to include the \textbf{RaptorQ/RaptorQ\_v1.hpp} header, and link \textbf{libRaptorQ} and your threading library (usually \textit{libpthread}).
+
+You can also use the library as a header-only include, by including \textbf{RaptorQ/RaptorQ\_v1\_hdr.hpp}. All your code should keep working even if you switch between linked and header-only at a later date. If you use the header-only version, remember to have Eigen3 in your include path, and to include the needed definitions, \texttt{RQ\_LITTLE\_ENDIAN} or \texttt{RQ\_BIG\_ENDIAN}
+
+\marginlabel{Namespace}
+Since the libRaptorQ library now has two very different usages, everything was split into two namespaces: \textbf{RFC6330} and \textbf{RaptorQ}. The names should be explanatory: the first namespace is for the RFC interface, while the second namespace is for the low-level interface.
+
+Since we will cover only the \textbf{RaptorQ} namespace here, remember that everything we talk about is in this namespace.
+
+Both the RFC6330 and the RaptorQ namespace are versioned so you can keep using old APIs while we change stuff. just add \textbf{\texttt{\_\_v1}} to select the first version of the API. E.g: \textbf{\texttt{RaptorQ\_\_v1}}
+
+\newpage
+
+\index{Iterators}\marginlabel{Templates}
+There are two main classes you will use:
+\begin{verbatim}
+template <typename Rnd_It, typename Fwd_It>
+class Encoder
+
+template <typename In_It, typename Fwd_It>
+class Decoder
+\end{verbatim}
+
+As you might guess, the classes for the encoder and decoder take two template parameters.\\
+For the \textbf{Encoder}, the first parameter \textit{MUST} be a \textit{random access iterator} to the input data, and the second parameter is a
+\textit{forward iterator}. The random access iterator will be used to scan your input data. The forward iterator will be used to write the data to your output.\\
+The same is done for the \textbf{Decoder}, but the first iterator can be just an input iterator, 
+and nothing more.
+
+\subsubsection{Caching precomputations}
+\index{Cache!C++'}
+libRaptorQ can now cache the most used matrices for a quicker reference. The cache can be scaled up or down dynamically.
+
+\begin{description}
+
+\item[local\_cache\_size] \textbf{const uint64\_t local\_cache}\\
+\textbf{return: bool}\\
+Set the local cache size. returns false on error.
+
+\item[get\_local\_cache\_size()] \textbf{return: uint64\_t}\\
+get the size of our local cache
+
+\item[supported\_compressions()] \textbf{return: Compress} \\
+Get the bitmask of all supported compression algorithms. currently only \textbf{Compress::NONE} and \textbf{Compress::LZ4}.
+
+\item[get\_compression()] \textbf{return: Compress} \\
+Get the current compression used.
+
+\item [set\_compression] \textbf{const Compress compression} \\
+\textbf{return: bool}\\
+Try to set a compression algorithm. LZ4 is not a mandatory dependency, so we might not have it
+
+\end{description}
+
+
+\newpage
+\subsubsection{The Encoder}
+\index{Encoder!C++}
+The constructor is the following:
+\begin{lstlisting}[language=C++]
+Encoder (const Block_Size symbols, const size_t symbol_size);
+\end{lstlisting}
+
+Which is really simple. The first is an Enum that will help you get the correct block size, and the second is your arbitrary symbol size.
+
+Since the RaptorQ algorithm only works with specific block sizes, You can get all the possible block sizes from \texttt{RaptorQ\_\_v1::*blocks}, which is a pointer to an array of 477 possible sizes, from $10$ to $56403$. You can cast each element in this array to \texttt{uint16\_t} to verify the actual value, or directly name them, as in \texttt{RaptorQ\_\_v1::Block\_Size::Block\_42}.
+
+If you pass unsafe values the encoder (or decoder) will refuse to work.
+
+You can instantiate an encoder for example by doing:
+
+\begin{lstlisting}[language=C++]
+std::vector<uint32_t> input, output;
+...
+using T_it = typename std::vector<uint32_t>::iterator;
+using RaptorQ = RaptorQ__v1;
+RaptorQ::Encoder<T_it, T_it> enc (
+						RaptorQ::Block_Size::Block_42,					
+						1500);
+														
+\end{lstlisting}
+
+This will create an Encoder that works on vectors of unsigned 32 bit integers for both input and output, that will be fed to a block of size 42 
+symbols of size 1500 bytes.
+
+The available methods for the encoder are the following:
+
+\begin{description}
+\item[operator bool()] \textbf{return:bool}\\
+False if constructor parameters did not make sense. Else true.
+
+
+\item[symbol\_size()] \textbf{return: uint16\_t} The size of a symbol.
+
+\item[symbols] \textbf{Input:uint8\_t sbn}\\
+\textbf{return: uint16\_t}\\
+The number of symbols in a specific block. different blocks can have different symbols.
+
+\item[max\_repair] \textbf{Input: const uint8\_t sbn)}\\
+\textbf{return: uint32\_t}\\
+The maximum amount of repair symbols that you can generate. Something less than $2^{24}$, but the exact number depends on the number of symbols in a block
+
+\item[begin\_source()] \textbf{return: Symbol\_Iterator<Rnd\_It, Fwd\_It>}\\
+This returns an iterator to the symbols in this block. Source symbols only
+\item[end\_source()] \textbf{return: const Symbol.\_Iterator<Rnd\_It, Fwd\_It>}\\
+This returns an iterator to the end of the source symbols.
+\item[begin\_repair()] \textbf{return: Symbol\_Iterator<Rnd\_It, Fwd\_It>}\\
+This returns an iterator to the symbols in this block. Source symbols only
+\item[end\_repair] \textbf{Input: const uint32\_t max\_repair}\\
+\textbf{return: const Symbol.\_Iterator<Rnd\_It, Fwd\_It>}\\
+This returns an iterator to the end of the source symbols.
+
+\item[has\_data()] \textbf{return: bool}\\
+Did you feed this encoder the data? That is: did you use \texttt{set\_data()} without calling \texttt{clear\_data()} later?
+
+\item[set\_data] \textbf{Input: const Rnd\_It \&from}\\
+.\ \ \ \ \ \ \ \ \ \ \textbf{const Rnd\_It \&to}\\
+\textbf{return: size\_t}\\
+Set the iterators from which we load all the data.
+
+\item[clear\_data]\textbf{return: void}\\
+clear all data, without deallocating memory so that things might be slightly faster next time.
+
+\item[ready()]\textbf{return: bool}\\
+Is everything decoded?
+
+\item[stop()]\textbf{return void}\\
+Stop any current decoding and return error.
+
+\item[precompute\_sync()]\textbf{return: bool}\\
+Start a precomputation so that next computations might be slightly faster. Only return when the precomputation is done or stop() was called.
+
+\item[compute\_sync()]\textbf{return: bool}\\
+Compute internal symbols from the input. Only return when the computation is done or stop() was called.
+
+\item[precompute()] \textbf{return: std::shared\_future<Error>}\\
+Start a precomputation so that next computations might be slightly faster. Returns immediately, but the user can wait or poll on the returned future.
+
+\item[compute()] \textbf{return: std::shared\_future<Error>}\\
+Start a computation on the data. Returns immediately, but the user can wait or poll on the returned future.
+
+\item[encode]\textbf{Input:Fwd\_It \&output}\\
+.\ \ \ \ \ \ \ \ \textbf{const Fwd\_It end}\\
+.\ \ \ \ \ \ \ \ \textbf{const uint32\_t id}\\
+\textbf{return: size\_t}\\
+Once the computation is finished, you can get the encoded symbols. The first \texttt{symbols()} are source symbols, and the next are repair symbols. Returns the number of iterators written into the \texttt{output} iterator, which will point to the first non-written element after the symbol.
+
+\end{description}
+
+\subsubsection{Symbols}
+\index{Symbols!C++}
+With the \textit{begin\_source()/end\_source()/begin\_repair()/end\_repair(..)} calls you get \textit{input iterators} to the symbols. A symbol has the following type:
+\begin{lstlisting}[language=C++]
+template <typename Rnd_It, typename Fwd_It>
+class Symbol
+\end{lstlisting}
+and exposes the	 following methods:
+\begin{description}
+\item[id()]\textbf{return: uint32\_t}
+\item[operator()]\textbf{Input: Fwd\_It \&start}\\
+.\ \ \ \ \ \ \ \ \ \ \ \textbf{const Fwd\_It end}\\
+\textbf{return: uint32\_t}\\
+Write the symbol into the start-end iterators provided by the user. Afterwards the start iterator will point to the first non-written element after the symbol
+\end{description}
+
+
+
+\newpage
+\subsubsection{The Decoder}
+\index{Decoder!C++}
+
+There are two constructors for the Decoder:
+
+\begin{lstlisting}[language=C++]
+ std::vector<uint32_t> input, output;
+ using T_it = typename std::vector<uint32_t>::iterator;
+
+ RaptorQ__v1::Decoder<T_it, T_it> dec (
+ 							const Block_Size symbols,
+ 							const size_t symbol_size,
+							const Report type);
+
+\end{lstlisting}
+
+The only parameter that is not self-explanatory is the Report type: it regulates when the decoder will tell you that there is available data and will let you extract it.\\
+The possible values are:
+
+\begin{itemize}
+	\item \textbf{Report::PARTIAL\_FROM\_BEGINNING} report the data as it become available, but the data will be sequential
+	\item \textbf{Report::PARTIAL\_ANY} report any symbol as it becomes available. Could be out-of-order, and you can get symbols before the decoding starts.
+	\item \textbf{Report::COMPLETE} wait until the whole block has been decoded.
+\end{itemize}
+
+
+The decoding methods are:
+
+\begin{description}
+\item[symbols()]\textbf{return: uint16\_t}\\
+The number of symbols in this block
+\item[symbol\_size()]\textbf{return: size\_t}\\
+The bytes in each symbol
+\item[can\_decode()]\textbf{return: bool}\\
+Whether we have enough data to start decoding or not
+\item[ready()]\textbf{return: bool}\\
+Whether everything has been decoded or not.
+\item[needed\_symbols()]\textbf{uint16\_t}\\
+How many more symbols we need before we try to decode again. If this is 0, you can decode.
+\item[clear\_data()]\textbf{return: void}\\
+clear all data, without deallocating memory so that things might be slightly faster next time.
+\item[stop()]\textbf{return: void}\\
+Stop any decoding done in the background.
+
+\item[begin()] \textbf{return: Symbol\_Iterator<In\_It, Fwd\_It>}\\
+This returns an iterator to the symbols in this block.
+\item[end()] \textbf{return: const Symbol\_Iterator<In\_It, Fwd\_It>}\\
+This returns an iterator to the end of the symbols in this block
+
+\item[add\_symbols] \textbf{Input: In\_it \&from}\\
+.\ \ \ \ \ \ \ \ \ \ \textbf{const In\_it \&to}\\
+.\ \ \ \ \ \ \ \ \ \ \textbf{const uint32\_t esi}\\
+\textbf{return: RaptorQ\_\_v1::Error}\\
+Add one symbol to this block. If the symbol is less than \texttt{symbol\_size()} the symbol will be padded with zeros
+\item[end\_of\_input] \textbf{Input: const Fill\_With\_Zeros fill}\\
+\textbf{return: std::vector<bool>}\\
+Tell the decoder that we know that there will be no more data for this block.
+The first parameter is an \texttt{enum}, either \textbf{Fill\_With\_Zeros::YES}  or \textbf{Fill\_With\_Zeros::NO}
+If you choose \texttt{YES} then the repair symbols will be discarded, the missing symbols will be filled with zeros
+and for output you will get the bitmask for which byte was received (true) or was filled with zeros (false).\\
+If you choose \textbf{Fill\_With\_Zeros::NO} you will get \textit{an empty vector}, and the decoding will end with error if it was waiting for more input.
+
+
+\item[set\_max\_concurrency] \textbf{Input: const uint16\_t max\_threads}\\
+\textbf{return: void}\\
+The decoder can try to decode the same block multiple times, while more repair symbols arrive.
+Unless you really need it, leave the default, which is $1$, so no decoding concurrency or the same block.
+
+\item[decode\_once()] \textbf{return: RaptorQ\_\_v1::Decoder\_Result}\\
+Try to decode the block, only return once the decoding is finished, do not try again even if more repair symbols arrived.
+
+\item[poll()] \textbf{return: RaptorQ\_\_v1::Decoder\_wait\_res}\\
+\begin{lstlisting}[language=c++]
+struct Decoder_wait_res {
+	Error error;
+	uint16_t symbol;
+};
+\end{lstlisting}
+In general, the \texttt{error} can be \textbf{Error::WORKING}, \texttt{Error::NEED\_DATA}, \texttt{Error::NONE}. The last one signals that the block (or symbol, see later) has been decoded.
+The \texttt{symbol} parameter changes depending on the \textbf{RaptorQ\_\_v1::Report} type that you set when you constructed the decoder:
+\begin{itemize}
+	\item \textbf{Report::PARTIAL\_FROM\_BEGINNING}: \texttt{symbols} will be the number of symbols available, but counting only the sequential ones starting from the beginning
+	\item \textbf{Report::PARTIAL\_ANY}: \texttt{symbols} will be the first symbol available (if \texttt{error} == \texttt{Error::NONE}). If the block has been decoded \texttt{symbols} == \texttt{decoder.symbols()}
+	\item \textbf{Report::COMPLETE} \texttt{symbols} is not used. 
+\end{itemize}
+
+
+\item[wait\_sync()] \textbf{return: RaptorQ\_\_v1::Decoder\_wait\_res}\\
+Start the decoding, and keep trying or waiting for new data to arrive until either we successfully decode the block or \texttt{stop()} is called. Also stops waiting for data after \texttt{end\_of\_input} is called (but will keep retrying if there already is enough).\\
+The result is the same as above
+
+\item[wait()] \textbf{return: std::future<RaptorQ\_\_v1::Decoder\_wait\_res>}\\
+Same as before, but returns a future immediately. This call is enabled only if you are compiling with C++11 or later
+
+\item[decode\_symbol()] \textbf{Input: Fwd\_It \&start}\\
+.\ \ \ \ \ \ \ \ \ \ \ \textbf{const Fwd\_It end}\\
+.\ \ \ \ \ \ \ \ \ \ \ \textbf{const uint16\_t esi} \\
+\textbf{return: RaptorQ\_\_v1::Error}\\
+Decode a single symbol. If $end-start$ is less then the symbol size, then you will get a partial symbol.
+\textbf{return: RaptorQ\_\_v1::Error}\\
+
+\item[decode\_bytes] \textbf{Input: Fwd\_It \&start}\\
+.\ \ \ \ \ \ \ \ \ \ \textbf{const Fwd\_It end}\\
+.\ \ \ \ \ \ \ \ \ \ \textbf{const size\_t from\_byte}\\
+.\ \ \ \ \ \ \ \ \ \ \textbf{const size\_t skip}\\
+\textbf{return: Decoder\_written} \\
+Decode a specific range of the block. The \texttt{skip} parameter is the offset (in bytes) to skip from the \texttt{size} iterator. This is done to allow to work with iterators whose data is bigger than 1 byte. Although we recommend to work with uint8\_t data.\\
+Returns the number of bytes written, offset of the data in the last iterator (0 if it is aligned to the iterator)
+\begin{lstlisting}[language=c++]
+struct RAPTORQ_API Decoder_written {
+	size_t written;
+	size_t offset;
+};
+\end{lstlisting}
+
+
+\end{description}
+
+
+
+
+
+\input{GNU_FDL.tex}
+
+\printindex
+\end{document}
