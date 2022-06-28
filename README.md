@@ -1,13 +1,10 @@
 # TON-pow-miner-fpga
 
+Contact with developers group
+e-mail: aifashion@yandex.ru
+
 TON wallet address for donations:
 EQAvRnuckR42aEE29_WCDCTOwEci1ZKo8a5ul4ncYWaqxA2q
-
-
-
-Contact with developers group
-
-e-mail: aifashion@yandex.ru
 
 Video with CLI tools and GUI tools demonstration:
 https://youtu.be/6jhKerembEo
@@ -15,8 +12,8 @@ https://youtu.be/6jhKerembEo
 Video with hardware demonstration:
 https://youtu.be/LwFCbMIoDbs
 
-RTL models and ditgital design overview:
-
+RTL models and digital design overview:
+https://youtu.be/UAWZrs7xN-E
 
 This repository contains:
 1. Verilog/SystemVerilog RTL models of TON Coin miner (you can synthesize for different FPGA's or ASIC's);
