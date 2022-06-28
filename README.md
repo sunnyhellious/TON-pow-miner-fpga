@@ -3,6 +3,21 @@
 TON wallet address for donations:
 EQAvRnuckR42aEE29_WCDCTOwEci1ZKo8a5ul4ncYWaqxA2q
 
+
+
+Contact with developers group
+
+e-mail: aifashion@yandex.ru
+
+Video with CLI tools and GUI tools demonstration:
+https://youtu.be/6jhKerembEo
+
+Video with hardware demonstration:
+https://youtu.be/LwFCbMIoDbs
+
+RTL models and ditgital design overview:
+
+
 This repository contains:
 1. Verilog/SystemVerilog RTL models of TON Coin miner (you can synthesize for different FPGA's or ASIC's);
 2. Project with BitStream for Xilinx Kintex-7 325T FPGA;
